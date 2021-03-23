@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FAA08D6E2604208B00B8449A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAA08D6D2604208B00B8449A /* main.cpp */; };
+		FAA08D8B260433E200B8449A /* libaws-cpp-sdk-monitoring.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA08D87260433C000B8449A /* libaws-cpp-sdk-monitoring.dylib */; };
+		FAA08D8C260433E200B8449A /* libaws-cpp-sdk-core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA08D86260433C000B8449A /* libaws-cpp-sdk-core.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		FAA08D6A2604208A00B8449A /* AwsSdkMetrics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AwsSdkMetrics; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA08D6D2604208B00B8449A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FAA08D86260433C000B8449A /* libaws-cpp-sdk-core.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libaws-cpp-sdk-core.dylib"; path = "../../../../../usr/local/lib/libaws-cpp-sdk-core.dylib"; sourceTree = "<group>"; };
+		FAA08D87260433C000B8449A /* libaws-cpp-sdk-monitoring.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libaws-cpp-sdk-monitoring.dylib"; path = "../../../../../usr/local/lib/libaws-cpp-sdk-monitoring.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA08D8B260433E200B8449A /* libaws-cpp-sdk-monitoring.dylib in Frameworks */,
+				FAA08D8C260433E200B8449A /* libaws-cpp-sdk-core.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				FAA08D6C2604208B00B8449A /* AwsSdkMetrics */,
 				FAA08D6B2604208A00B8449A /* Products */,
+				FAA08D752604229300B8449A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +67,15 @@
 				FAA08D6D2604208B00B8449A /* main.cpp */,
 			);
 			path = AwsSdkMetrics;
+			sourceTree = "<group>";
+		};
+		FAA08D752604229300B8449A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAA08D86260433C000B8449A /* libaws-cpp-sdk-core.dylib */,
+				FAA08D87260433C000B8449A /* libaws-cpp-sdk-monitoring.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +256,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AwsSdkMetrics/libs",
+					/usr/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +270,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AwsSdkMetrics/libs",
+					/usr/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
